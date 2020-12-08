@@ -1,0 +1,12 @@
+<p>
+	<mat-form-field appearance="standard">
+		<mat-label>{{ definition.label }}</mat-label>
+		<input
+			matInput
+			[type]="subType"
+			[name]="definition.name"
+			[formControl]="formControl"
+		/>
+		<mat-error>Falsch oder fehlt</mat-error>
+	</mat-form-field>
+</p>

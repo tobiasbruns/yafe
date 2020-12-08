@@ -1,0 +1,33 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+	<mat-step
+		*ngFor="let groupDefinition of formsService.groupDefinitions; index as i"
+		[stepControl]="formsService.groups[i]"
+	>
+		<form [formGroup]="formsService.groups[i]">
+			<ng-template matStepLabel>{{ groupDefinition.title }}</ng-template>
+			<div>
+				<div #stepForm></div>
+			</div>
+			<div>
+				<button *ngIf="i > 0" mat-raised-button matStepperPrevious>Back</button>
+				<button
+					*ngIf="!isLastStep(i)"
+					mat-raised-button
+					matStepperNext
+					color="primary"
+				>
+					Next
+				</button>
+				<button
+					*ngIf="isLastStep(i)"
+					mat-raised-button
+					type="submit"
+					color="primary"
+					(click)="formsService.submit()"
+				>
+					Abschicken
+				</button>
+			</div>
+		</form>
+	</mat-step>
+</mat-horizontal-stepper>

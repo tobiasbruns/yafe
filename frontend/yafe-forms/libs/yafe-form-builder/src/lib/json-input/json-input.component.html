@@ -1,0 +1,12 @@
+<textarea
+	[(ngModel)]="currentInput"
+	(keyup)="jsonInput()"
+	cols="50"
+	rows="30"
+></textarea>
+<hr />
+
+<div *ngIf="parserError">
+	<h3>Invalid json</h3>
+	{{ parserError }}
+</div>
