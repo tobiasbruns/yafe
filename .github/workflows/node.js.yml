@@ -10,9 +10,9 @@ on:
     branches: [ main ]
 
 defaults:
-	run:
-		shell: bash
-		working-directory: frontend/yafe-forms
+  run:
+    shell: bash
+    working-directory: frontend/yafe-forms
 
 jobs:
   build:
