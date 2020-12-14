@@ -1,0 +1,11 @@
+{
+  "/forms": {
+    "target": {
+      "host": "localhost",
+      "port": 8080,
+      "protocol": "http:"
+    },
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

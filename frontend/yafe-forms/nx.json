@@ -38,6 +38,9 @@
     },
     "yafe-form-builder": {
       "tags": []
+    },
+    "yafe-form-player": {
+      "tags": []
     }
   }
 }

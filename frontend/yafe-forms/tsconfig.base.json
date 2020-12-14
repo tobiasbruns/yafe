@@ -18,7 +18,8 @@
     "paths": {
       "@yafe-forms/widgets": ["libs/widgets/src/index.ts"],
       "@yafe-forms/core": ["libs/core/src/index.ts"],
-      "@yafe-forms/yafe-form-builder": ["libs/yafe-form-builder/src/index.ts"]
+      "@yafe-forms/yafe-form-builder": ["libs/yafe-form-builder/src/index.ts"],
+      "@yafe-forms/yafe-form-player": ["libs/yafe-form-player/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

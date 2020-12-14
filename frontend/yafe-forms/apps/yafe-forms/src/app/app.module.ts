@@ -7,14 +7,29 @@ import { WidgetsModule } from '@yafe-forms/widgets';
 import { YafeFormBuilderModule } from '@yafe-forms/yafe-form-builder';
 
 import { CoreModule } from '@yafe-forms/core';
+import { YafeFormPlayerModule } from '@yafe-forms/yafe-form-player';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { FormListComponent } from 'libs/yafe-form-player/src/lib/form-list/form-list.component';
+
+const routes: Routes = [{
+	path: '',
+	component: FormListComponent
+}];
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule,
-    WidgetsModule, CoreModule, MatGridListModule, FormsModule, ReactiveFormsModule,
-    YafeFormBuilderModule],
-  providers: [],
-  bootstrap: [AppComponent],
+	declarations: [AppComponent],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		YafeFormPlayerModule,
+		RouterModule.forRoot(routes),
+		WidgetsModule,
+		CoreModule,
+		MatGridListModule, FormsModule, ReactiveFormsModule,
+		YafeFormBuilderModule],
+	providers: [],
+	bootstrap: [AppComponent],
 })
 export class AppModule { }
+

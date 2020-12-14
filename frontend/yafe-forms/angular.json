@@ -215,6 +215,36 @@
           "style": "scss"
         }
       }
+    },
+    "yafe-form-player": {
+      "projectType": "library",
+      "root": "libs/yafe-form-player",
+      "sourceRoot": "libs/yafe-form-player/src",
+      "prefix": "yafe-forms",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/yafe-form-player/tsconfig.lib.json",
+              "libs/yafe-form-player/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/yafe-form-player/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/yafe-form-player/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
