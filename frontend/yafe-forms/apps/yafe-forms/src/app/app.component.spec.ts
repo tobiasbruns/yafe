@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { YafeFormBuilderModule } from '@yafe-forms/yafe-form-builder';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
 
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
 			imports: [
 				MatGridListModule,
 				YafeFormBuilderModule,
-				HttpClientTestingModule
+				HttpClientTestingModule,
+				RouterTestingModule
 			],
 			providers: [
 				FormBuilder
