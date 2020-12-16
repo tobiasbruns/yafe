@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { MatGridListModule } from '@angular/material/grid-list'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClientModule } from '@angular/common/http';
 import { WidgetsModule } from '@yafe-forms/widgets';
 import { YafeFormBuilderModule } from '@yafe-forms/yafe-form-builder';
@@ -27,6 +29,7 @@ const routes: Routes = [{
 		WidgetsModule,
 		CoreModule,
 		MatGridListModule, FormsModule, ReactiveFormsModule,
+		MatDividerModule,
 		YafeFormBuilderModule],
 	providers: [],
 	bootstrap: [AppComponent],

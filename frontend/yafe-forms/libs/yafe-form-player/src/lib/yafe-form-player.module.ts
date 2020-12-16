@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormListComponent } from './form-list/form-list.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 const routes: Routes = [{
 	path: 'form/:formName',
@@ -18,7 +19,8 @@ const routes: Routes = [{
 		CommonModule,
 		RouterModule.forChild(routes),
 		MatButtonModule,
-		MatIconModule
+		MatIconModule,
+		MatSlideToggleModule
 	],
 	declarations: [FormPlayerComponent, FormPlayerContainerComponent, FormListComponent],
 	exports: [FormPlayerContainerComponent]

@@ -10,20 +10,23 @@ import { CoreModule } from '@yafe-forms/core';
 import { FormComponent } from './form/form.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { SelectComponent } from './select/select.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatStepperModule,
-    MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-  ],
-  declarations: [TextInputComponent, StepperComponent, FormComponent],
-  exports: [TextInputComponent, StepperComponent],
+	imports: [
+		CommonModule,
+		CoreModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatStepperModule,
+		MatButtonModule,
+		MatSelectModule,
+		FormsModule,
+		ReactiveFormsModule,
+		BrowserAnimationsModule,
+	],
+	declarations: [TextInputComponent, StepperComponent, FormComponent, SelectComponent],
+	exports: [TextInputComponent, StepperComponent],
 })
 export class WidgetsModule { }

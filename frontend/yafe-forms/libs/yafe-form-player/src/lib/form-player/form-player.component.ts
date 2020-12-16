@@ -1,9 +1,9 @@
 import { AfterContentInit, Component, Input, OnChanges, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { StepperComponent, TextInputComponent } from '@yafe-forms/widgets';
-import { FieldsService, FormsService } from '@yafe-forms/core';
+import { isNil, FormsService } from '@yafe-forms/core';
 import { ComponentRef } from '@angular/core';
 import { ComponentFactoryResolver } from '@angular/core';
-import { isNil } from 'lodash-es';
+
 
 @Component({
 	selector: 'yafe-forms-form-player',
@@ -21,9 +21,7 @@ export class FormPlayerComponent implements OnChanges {
 
 
 	ngOnChanges() {
-		console.log('change...: ' + JSON.stringify(this.formDefinition));
 		if (!isNil(this.formDefinition)) {
-			console.log("baue form");
 			this.formsService.initForm(this.formDefinition);
 			this.createForm();
 		}

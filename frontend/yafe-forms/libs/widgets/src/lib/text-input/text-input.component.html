@@ -1,9 +1,11 @@
 <p>
-	<mat-form-field appearance="standard">
+	<mat-form-field appearance="standard" style="width: 100%">
 		<mat-label>{{ definition.label }}</mat-label>
 		<input
+			[required]="isRequired()"
+			style="width: 100%"
 			matInput
-			[type]="subType"
+			[type]="definition.subType"
 			[name]="definition.name"
 			[formControl]="formControl"
 		/>

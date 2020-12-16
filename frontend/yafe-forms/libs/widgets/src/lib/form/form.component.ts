@@ -1,7 +1,8 @@
-import { AfterContentInit } from '@angular/core';
+import { AfterContentInit, Type } from '@angular/core';
 import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FieldsService } from '@yafe-forms/core';
+import { FieldsService, FormFieldComponent, YafeFormDefinition, YafeFormGroup } from '@yafe-forms/core';
+import { SelectComponent } from '../select/select.component';
 import { TextInputComponent } from '../text-input/text-input.component';
 
 @Component({
@@ -12,10 +13,15 @@ import { TextInputComponent } from '../text-input/text-input.component';
 export class FormComponent implements AfterContentInit {
 
 	@Input() formGroup: FormGroup;
-	@Input() formDefinition: any;
+	@Input() formDefinition: YafeFormGroup;
 
 	@ViewChild('fields', { read: ViewContainerRef, static: true })
 	fieldsContainer: ViewContainerRef;
+
+	private readonly typeToComponent: { [type: string]: Type<FormFieldComponent> } = {
+		'text': TextInputComponent,
+		'select': SelectComponent
+	}
 
 	constructor(private fieldsService: FieldsService) { }
 
@@ -23,10 +29,10 @@ export class FormComponent implements AfterContentInit {
 		this.fieldsContainer.clear();
 
 		this.formDefinition.fields.forEach(fieldDef => {
-			const field = this.fieldsService.createField(fieldDef, TextInputComponent, this.fieldsContainer);
+			const field = this.fieldsService.createField(fieldDef, this.typeToComponent[fieldDef.type], this.fieldsContainer);
 			field.instance.formControl = this.formGroup.controls[fieldDef.name];
-			field.instance.subType = fieldDef.subType;
-			field.instance.definition = fieldDef;
+			// field.instance.subType = fieldDef.subType;
+			// field.instance.definition = fieldDef;
 		});
 	}
 

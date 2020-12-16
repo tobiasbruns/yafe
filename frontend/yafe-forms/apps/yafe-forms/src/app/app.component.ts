@@ -1,13 +1,7 @@
-import { AfterContentInit, ComponentRef } from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
 import {
-	Component,
-	ComponentFactoryResolver,
-	ViewChild,
-	ViewContainerRef,
+	Component
 } from '@angular/core';
-import { FieldsService, FormsService } from '@yafe-forms/core';
-import { StepperComponent, TextInputComponent } from '@yafe-forms/widgets';
+import { FieldsService, FormsService, YafeFormDefinition } from '@yafe-forms/core';
 
 @Component({
 	selector: 'yafe-forms-root',
@@ -19,43 +13,5 @@ export class AppComponent {
 
 	title = 'yafe-forms';
 
-	readonly sample = {
-		groups: [
-			{
-				title: 'Kontakdaten',
-				fields: [
-					{
-						type: 'text',
-						name: 'vorname',
-						label: 'Vorname',
-					},
-					{
-						type: 'text',
-						name: 'name',
-						label: 'Name',
-					},
-					{
-						type: 'text',
-						subType: 'tel',
-						name: 'telefon',
-						label: 'Telefon',
-					},
-				],
-			},
-			{
-				title: 'Anliegen',
-				fields: [{ type: 'text', label: 'Anliegen' }],
-			},
-		]
-	};
-
-	readonly typeToClass = {
-		text: TextInputComponent,
-	};
-
-	constructor(
-
-	) { }
-
-
+	constructor() { }
 }

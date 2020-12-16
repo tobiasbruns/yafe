@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
 import { YafeFormBuilderModule } from '@yafe-forms/yafe-form-builder';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -14,7 +14,7 @@ describe('AppComponent', () => {
 		await TestBed.configureTestingModule({
 			declarations: [AppComponent],
 			imports: [
-				MatGridListModule,
+				MatDividerModule,
 				YafeFormBuilderModule,
 				HttpClientTestingModule,
 				RouterTestingModule

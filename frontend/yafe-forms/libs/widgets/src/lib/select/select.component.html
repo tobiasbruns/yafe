@@ -1,0 +1,10 @@
+<mat-form-field appearance="standard" style="width: 100%">
+	<mat-label>{{ definition.label }}</mat-label>
+	<mat-select [formControl]="formControl">
+		<mat-option
+			*ngFor="let val of definition.properties['selectValues']"
+			[value]="val.value"
+			>{{ val.label }}</mat-option
+		>
+	</mat-select>
+</mat-form-field>
