@@ -21,7 +21,7 @@ describe('FormComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(FormComponent);
 		component = fixture.componentInstance;
-		component.formDefinition = { title: 'test', fields: [] }
+		component.formDefinition = { title: 'test', name: 'test', itemType: 'section', items: [] }
 		fixture.detectChanges();
 	});
 

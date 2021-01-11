@@ -21,7 +21,7 @@ describe('TextInputComponent', () => {
 		fixture = TestBed.createComponent(TextInputComponent);
 		component = fixture.componentInstance;
 		component.formControl = new FormControl(null);
-		component.definition = { type: "text", name: "test", validators: [], label: "test" };
+		component.definition = { type: "text", itemType: 'field', name: "test", validators: [], label: "test" };
 		fixture.detectChanges();
 	});
 

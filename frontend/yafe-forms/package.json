@@ -9,6 +9,7 @@
     "start": "run-s \"nx -- serve --port 4200 --disable-host-check --proxy-config proxy.conf.json\" --",
 		"build": "ng build",
 		"test": "nx test",
+		"test:lib": "run-s \"nx -- test {1} --watchAll\" --",
     "ci:test": "npx jest",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",

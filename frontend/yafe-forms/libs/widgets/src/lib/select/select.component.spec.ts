@@ -20,7 +20,7 @@ describe('SelectComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(SelectComponent);
 		component = fixture.componentInstance;
-		component.definition = { type: 'select', name: 'test', label: 'test', validators: [], properties: [{ selectValues: [] }] };
+		component.definition = { type: 'select', itemType: 'field', name: 'test', label: 'test', validators: [], properties: [{ selectValues: [] }] };
 		component.formControl = new FormControl();
 		fixture.detectChanges();
 	});

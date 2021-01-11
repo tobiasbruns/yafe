@@ -35,8 +35,9 @@ export class FormComponent implements AfterContentInit {
 	}
 
 	private createFormContent(definition: YafeFormGroup, container: ViewContainerRef, formGroup: FormGroup) {
+		console.info("build content for " + definition.name + " | " + definition.title);
 		if (!definition.items) {
-			console.warn("missing items in group " + definition.name);
+			console.warn("missing items in group " + definition.title + "|" + definition.itemType);
 			return;
 		}
 		definition.items.forEach(itemDef => {
@@ -57,7 +58,7 @@ export class FormComponent implements AfterContentInit {
 		const subFormGroup = <FormGroup>formGroup.controls[groupDef.name]
 		if (!subFormGroup) console.warn("cannot find subFormGroup: " + groupDef.name);
 		subGroup.instance.formGroup = subFormGroup;
-		this.createFormContent(groupDef, subGroup.instance.container, subFormGroup);
+		// this.createFormContent(groupDef, subGroup.instance.container, subFormGroup);
 		return subGroup;
 	}
 }
