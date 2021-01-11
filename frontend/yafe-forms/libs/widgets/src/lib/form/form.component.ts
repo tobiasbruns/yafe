@@ -1,7 +1,10 @@
-import { AfterContentInit, Type } from '@angular/core';
-import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { group } from '@angular/animations';
+import { ComponentRef } from '@angular/core';
+import { AfterContentInit, Component, Input, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FieldsService, FormFieldComponent, YafeFormDefinition, YafeFormGroup } from '@yafe-forms/core';
+import { FieldsService, FormFieldComponent, YafeFieldDefinition, YafeFormGroup } from '@yafe-forms/core';
+import { CheckboxComponent } from '../checkbox/checkbox.component';
+import { FormSectionComponent } from '../form-section/form-section.component';
 import { SelectComponent } from '../select/select.component';
 import { TextInputComponent } from '../text-input/text-input.component';
 
@@ -20,20 +23,41 @@ export class FormComponent implements AfterContentInit {
 
 	private readonly typeToComponent: { [type: string]: Type<FormFieldComponent> } = {
 		'text': TextInputComponent,
-		'select': SelectComponent
+		'select': SelectComponent,
+		'checkbox': CheckboxComponent
 	}
 
 	constructor(private fieldsService: FieldsService) { }
 
 	ngAfterContentInit(): void {
 		this.fieldsContainer.clear();
+		this.createFormContent(this.formDefinition, this.fieldsContainer, this.formGroup);
+	}
 
-		this.formDefinition.fields.forEach(fieldDef => {
-			const field = this.fieldsService.createField(fieldDef, this.typeToComponent[fieldDef.type], this.fieldsContainer);
-			field.instance.formControl = this.formGroup.controls[fieldDef.name];
-			// field.instance.subType = fieldDef.subType;
-			// field.instance.definition = fieldDef;
+	private createFormContent(definition: YafeFormGroup, container: ViewContainerRef, formGroup: FormGroup) {
+		if (!definition.items) {
+			console.warn("missing items in group " + definition.name);
+			return;
+		}
+		definition.items.forEach(itemDef => {
+			if (itemDef.itemType === 'field') this.createField(<YafeFieldDefinition>itemDef, container, formGroup);
+			else if (itemDef.itemType === 'section') this.createSubGroup(<YafeFormGroup>itemDef, container, formGroup);
+			else console.warn("unkown type: " + JSON.stringify(itemDef));
 		});
 	}
 
+	private createField(fieldDef: YafeFieldDefinition, container: ViewContainerRef, formGroup: FormGroup): ComponentRef<FormFieldComponent> {
+		const field = this.fieldsService.createField(fieldDef, this.typeToComponent[fieldDef.type], container);
+		field.instance.formControl = formGroup.controls[fieldDef.name];
+		return field;
+	}
+
+	private createSubGroup(groupDef: YafeFormGroup, container: ViewContainerRef, formGroup: FormGroup): ComponentRef<any> {
+		const subGroup = this.fieldsService.createSubForm(groupDef, container, FormSectionComponent);
+		const subFormGroup = <FormGroup>formGroup.controls[groupDef.name]
+		if (!subFormGroup) console.warn("cannot find subFormGroup: " + groupDef.name);
+		subGroup.instance.formGroup = subFormGroup;
+		this.createFormContent(groupDef, subGroup.instance.container, subFormGroup);
+		return subGroup;
+	}
 }

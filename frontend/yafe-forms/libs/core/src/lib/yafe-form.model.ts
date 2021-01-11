@@ -1,4 +1,4 @@
-import { AbstractControl, FormControl } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 
 export interface YafeFormDefinition {
 	name: string;
@@ -6,16 +6,22 @@ export interface YafeFormDefinition {
 	groups: YafeFormGroup[];
 }
 
-export interface YafeFormGroup {
-	title: string;
-	fields: YafeFieldDefinition[];
+export interface YafeFormItem {
+	itemType: 'section' | 'field';
+	name: string;
+	condition?: string;
 }
 
-export interface YafeFieldDefinition {
-	type: 'text' | 'select';
+export interface YafeFormGroup extends YafeFormItem {
+	title?: string;
+	items: YafeFormItem[];
+}
+
+export interface YafeFieldDefinition extends YafeFormItem {
+	type: 'text' | 'select' | 'checkbox';
 	subType?: string;
-	name: string;
 	label: string;
+	defaultValue?: string | number | boolean;
 	tip?: string;
 	description?: string;
 	validators: YafeValidator[];
@@ -28,9 +34,12 @@ export interface YafeValidator {
 	errorText?: string;
 }
 
-
-
 export interface FormFieldComponent {
 	definition: YafeFieldDefinition;
 	formControl: AbstractControl;
+}
+
+export interface FormSectionComponent {
+	definition: YafeFormGroup;
+
 }

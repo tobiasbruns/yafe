@@ -18,10 +18,7 @@ export class FormPlayerContainerComponent {
 
 	constructor(route: ActivatedRoute, httpClient: HttpClient) {
 		const formName = route.snapshot.paramMap.get(this.FORM_NAME_PARAMTER);
-		// const formName = route.snapshot.paramMap.get('formName');
 
-		this.formDefinition$ = httpClient.get("http://localhost:4200/forms/" + formName + ".yml").pipe(
-			tap(loaded => console.log("loaded formdef: " + JSON.stringify(loaded)))
-		);
+		this.formDefinition$ = httpClient.get("http://localhost:4200/forms/" + formName + ".yml");
 	}
 }

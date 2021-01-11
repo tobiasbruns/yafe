@@ -32,8 +32,6 @@ export class StepperComponent implements AfterViewInit {
 			const group = this.formsService.groups[index];
 			form.instance.formGroup = group;
 			form.instance.formDefinition = this.formsService.groupDefinitions[index];
-
-			console.log("Formular gebaut: " + this.formsService.groupDefinitions[index].title);
 		})
 
 		this.changeDetector.detectChanges();
