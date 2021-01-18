@@ -1,0 +1,21 @@
+<ng-container *ngIf="formDefinition$ | async as formDefinition">
+	<div class="main-container">
+		<div class="toolbar">Toolbar</div>
+
+		<div class="preview">
+			<yafe-forms-builder-preview
+				[formDefinition]="formDefinition"
+			></yafe-forms-builder-preview>
+		</div>
+
+		<div class="properties">Properites</div>
+
+		<!--
+	<div class="json-editor">
+		<yafe-forms-json-input
+			[formDefinition]="formDefinition"
+		></yafe-forms-json-input>
+	</div>
+	-->
+	</div>
+</ng-container>

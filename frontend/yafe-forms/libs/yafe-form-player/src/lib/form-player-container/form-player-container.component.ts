@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { YafeFormDefinition } from '@yafe-forms/core';
 import { Observable } from 'rxjs';
+import { FormDefinitionService } from '@yafe-forms/core';
 
 import { map, share, tap } from 'rxjs/operators';
 
@@ -14,11 +16,11 @@ export class FormPlayerContainerComponent {
 
 	private readonly FORM_NAME_PARAMTER = 'formName';
 
-	public formDefinition$: Observable<any>;
+	public formDefinition$: Observable<YafeFormDefinition>;
 
-	constructor(route: ActivatedRoute, httpClient: HttpClient) {
+	constructor(route: ActivatedRoute, service: FormDefinitionService) {
 		const formName = route.snapshot.paramMap.get(this.FORM_NAME_PARAMTER);
 
-		this.formDefinition$ = httpClient.get("http://localhost:4200/forms/" + formName + ".yml");
+		this.formDefinition$ = service.getFormDefinition(formName);
 	}
 }

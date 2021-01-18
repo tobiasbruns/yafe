@@ -32,6 +32,6 @@ import { FormSectionComponent } from './form-section/form-section.component';
 		BrowserAnimationsModule,
 	],
 	declarations: [TextInputComponent, StepperComponent, FormComponent, SelectComponent, CheckboxComponent, FormFieldComponent, FormSectionComponent],
-	exports: [TextInputComponent, StepperComponent, FormSectionComponent],
+	exports: [TextInputComponent, StepperComponent, FormSectionComponent, FormComponent],
 })
 export class WidgetsModule { }

@@ -2,7 +2,7 @@ import { group } from '@angular/animations';
 import { ComponentRef } from '@angular/core';
 import { AfterContentInit, Component, Input, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FieldsService, FormFieldComponent, YafeFieldDefinition, YafeFormGroup } from '@yafe-forms/core';
+import { FieldsService, FormFieldComponent, isNotNil, YafeFieldDefinition, YafeFormGroup } from '@yafe-forms/core';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { FormSectionComponent } from '../form-section/form-section.component';
 import { SelectComponent } from '../select/select.component';
@@ -49,16 +49,21 @@ export class FormComponent implements AfterContentInit {
 
 	private createField(fieldDef: YafeFieldDefinition, container: ViewContainerRef, formGroup: FormGroup): ComponentRef<FormFieldComponent> {
 		const field = this.fieldsService.createField(fieldDef, this.typeToComponent[fieldDef.type], container);
-		field.instance.formControl = formGroup.controls[fieldDef.name];
+		if (this.hasControl(formGroup, fieldDef.name)) field.instance.formControl = formGroup.controls[fieldDef.name];
 		return field;
+	}
+
+	private hasControl(formGroup: FormGroup, name: string): boolean {
+		return isNotNil(formGroup) && isNotNil(formGroup.controls[name]);
 	}
 
 	private createSubGroup(groupDef: YafeFormGroup, container: ViewContainerRef, formGroup: FormGroup): ComponentRef<any> {
 		const subGroup = this.fieldsService.createSubForm(groupDef, container, FormSectionComponent);
-		const subFormGroup = <FormGroup>formGroup.controls[groupDef.name]
-		if (!subFormGroup) console.warn("cannot find subFormGroup: " + groupDef.name);
-		subGroup.instance.formGroup = subFormGroup;
-		// this.createFormContent(groupDef, subGroup.instance.container, subFormGroup);
+		if (formGroup) {
+			const subFormGroup = <FormGroup>formGroup.controls[groupDef.name]
+			if (!subFormGroup) console.warn("cannot find subFormGroup: " + groupDef.name);
+			subGroup.instance.formGroup = subFormGroup;
+		}
 		return subGroup;
 	}
 }

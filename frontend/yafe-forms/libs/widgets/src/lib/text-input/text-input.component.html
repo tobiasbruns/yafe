@@ -1,5 +1,9 @@
-<p>
-	<mat-form-field appearance="standard" style="width: 100%; max-width: 300px">
+<p (click)="mark($event)">
+	<mat-form-field
+		appearance="standard"
+		style="width: 100%; max-width: 300px"
+		[ngClass]="{ marked: marked }"
+	>
 		<mat-label>{{ definition.label }}</mat-label>
 		<input
 			[required]="isRequired()"
@@ -8,6 +12,7 @@
 			[type]="definition.subType"
 			[name]="definition.name"
 			[formControl]="formControl"
+			[readonly]="true"
 		/>
 		<mat-error>Falsch oder fehlt</mat-error>
 	</mat-form-field>

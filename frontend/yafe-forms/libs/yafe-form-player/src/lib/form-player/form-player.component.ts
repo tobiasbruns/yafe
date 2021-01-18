@@ -33,7 +33,7 @@ export class FormPlayerComponent implements OnChanges {
 	}
 
 	private createForm(): void {
-		const stepper = this.createStepper();
+		this.createStepper();
 	}
 
 	private createStepper(): ComponentRef<StepperComponent> {

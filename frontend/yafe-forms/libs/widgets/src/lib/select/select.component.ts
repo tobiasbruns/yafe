@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
+import { AbstractControl, FormControl } from '@angular/forms';
 import { FormFieldComponent, YafeFieldDefinition } from '@yafe-forms/core';
 
 @Component({
@@ -10,7 +10,7 @@ import { FormFieldComponent, YafeFieldDefinition } from '@yafe-forms/core';
 export class SelectComponent implements FormFieldComponent {
 
 	definition: YafeFieldDefinition;
-	formControl: AbstractControl;
+	formControl: AbstractControl = new FormControl();
 
 	constructor() { }
 

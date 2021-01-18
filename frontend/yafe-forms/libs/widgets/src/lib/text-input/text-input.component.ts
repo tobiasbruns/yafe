@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, Input } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
+import { AbstractControl, FormControl } from '@angular/forms';
 import { YafeFieldDefinition, FormFieldComponent, isEmpty } from '@yafe-forms/core';
 
 
@@ -11,12 +11,20 @@ import { YafeFieldDefinition, FormFieldComponent, isEmpty } from '@yafe-forms/co
 export class TextInputComponent implements FormFieldComponent {
 
 	@Input() definition: YafeFieldDefinition;
-	@Input() formControl: AbstractControl;
+	@Input() formControl: AbstractControl = new FormControl();
+
+	marked: boolean = false;
 
 	constructor(public changeDetector: ChangeDetectorRef) { }
 
 	isRequired(): boolean {
 		return !isEmpty(this.definition.validators) &&
 			this.definition.validators.filter(validationDef => (validationDef.type === 'BuildIn') && (validationDef.name === 'required')).length > 0;
+	}
+
+	mark(event): void {
+
+		this.marked = !this.marked;
+		console.log('klick: ' + this.marked);
 	}
 }

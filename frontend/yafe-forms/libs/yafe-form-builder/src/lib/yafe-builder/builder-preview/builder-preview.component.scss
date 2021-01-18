@@ -1,0 +1,20 @@
+::ng-deep {
+	yafe-forms-builder-preview .mat-tab-body-wrapper {
+		height: 100%;
+	}
+}
+
+.workspace {
+	display: flex;
+
+	flex-direction: column;
+	height: 99%;
+
+	.form-editor {
+		flex: 1;
+	}
+
+	.json-editor {
+		min-height: 150px;
+	}
+}

@@ -11,7 +11,7 @@ import { FormSectionComponent as SectionComponent } from '@yafe-forms/core';
 export class FormSectionComponent implements SectionComponent {
 
 	@Input() definition: YafeFormGroup;
-	@Input() formGroup: FormGroup;
+	@Input() formGroup: FormGroup = new FormGroup({});
 
 	constructor(public container: ViewContainerRef) { }
 
