@@ -35,7 +35,6 @@ export class FormComponent implements AfterContentInit {
 	}
 
 	private createFormContent(definition: YafeFormGroup, container: ViewContainerRef, formGroup: FormGroup) {
-		console.info("build content for " + definition.name + " | " + definition.title);
 		if (!definition.items) {
 			console.warn("missing items in group " + definition.title + "|" + definition.itemType);
 			return;

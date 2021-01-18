@@ -27,7 +27,6 @@ export class StepperComponent implements AfterViewInit {
 	public ngAfterViewInit() {
 
 		this.stepFormContainers.forEach((eRef, index) => {
-			console.info('build form for ' + this.formsService.groupDefinitions[index].title);
 			eRef.clear();
 			const form: ComponentRef<FormComponent> = eRef.createComponent(this.factory);
 			const group = this.formsService.groups[index];

@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FormDefinitionService } from '@yafe-forms/core';
+import { of } from 'rxjs';
 import { FormPlayerComponent } from '../form-player/form-player.component';
 import { FormPlayerContainerComponent } from './form-player-container.component';
 
@@ -12,8 +14,19 @@ describe('FormPlayerContainerComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			imports: [MatIconModule, MatSlideToggleModule, MatIconModule, RouterTestingModule, HttpClientTestingModule],
-			declarations: [FormPlayerContainerComponent, FormPlayerComponent]
+			imports: [MatIconModule,
+				MatSlideToggleModule,
+				MatIconModule,
+				RouterTestingModule,
+				HttpClientTestingModule,
+				RouterTestingModule],
+			declarations: [FormPlayerContainerComponent, FormPlayerComponent],
+			providers: [
+				{
+					provide: FormDefinitionService,
+					useValue: { getFormDefinition: () => of(null) }
+				}
+			]
 		})
 			.compileComponents();
 	});
