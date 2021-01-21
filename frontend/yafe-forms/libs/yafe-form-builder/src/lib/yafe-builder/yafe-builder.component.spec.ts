@@ -1,13 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTabsModule } from '@angular/material/tabs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormDefinitionService } from '@yafe-forms/core';
-import { of } from 'rxjs';
-import { BuilderPreviewComponent } from './builder-preview/builder-preview.component';
-import { YafeBuilderComponent } from './yafe-builder.component';
-import { MatTabsModule } from '@angular/material/tabs';
-import { JsonInputComponent } from '../json-input/json-input.component';
 import { FormComponent } from 'libs/widgets/src/lib/form/form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { of } from 'rxjs';
+import { JsonInputComponent } from '../json-input/json-input.component';
+import { BuilderPreviewComponent } from './builder-preview/builder-preview.component';
+import { GroupSelectorComponent } from './group-selector/group-selector.component';
+import { YafeBuilderComponent } from './yafe-builder.component';
 
 describe('YafeBuilderComponent', () => {
 	let component: YafeBuilderComponent;
@@ -15,11 +17,15 @@ describe('YafeBuilderComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			imports: [RouterTestingModule, MatTabsModule, FormsModule],
+			imports: [RouterTestingModule,
+				MatTabsModule,
+				MatButtonToggleModule,
+				ReactiveFormsModule],
 			declarations: [YafeBuilderComponent,
 				BuilderPreviewComponent,
 				JsonInputComponent,
-				FormComponent
+				FormComponent,
+				GroupSelectorComponent
 			],
 			providers: [
 				{

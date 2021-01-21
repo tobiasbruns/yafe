@@ -16,26 +16,13 @@ import { FormComponent } from '../form/form.component';
 	templateUrl: './stepper.component.html',
 	styleUrls: ['./stepper.component.scss'],
 })
-export class StepperComponent implements AfterViewInit {
+export class StepperComponent {
 	private readonly factory = this.resolver.resolveComponentFactory(FormComponent);
 
 	@ViewChildren('stepForm', { read: ViewContainerRef })
 	stepFormContainers: QueryList<ViewContainerRef>;
 
 	constructor(private resolver: ComponentFactoryResolver, public formsService: FormsService, private changeDetector: ChangeDetectorRef) { }
-
-	public ngAfterViewInit() {
-
-		this.stepFormContainers.forEach((eRef, index) => {
-			eRef.clear();
-			const form: ComponentRef<FormComponent> = eRef.createComponent(this.factory);
-			const group = this.formsService.groups[index];
-			form.instance.formGroup = group;
-			form.instance.formDefinition = this.formsService.groupDefinitions[index];
-		})
-
-		this.changeDetector.detectChanges();
-	}
 
 	public isLastStep(idx: number): boolean {
 		return idx + 1 >= this.formsService.groupDefinitions.length

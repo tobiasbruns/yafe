@@ -21,10 +21,7 @@ export class FormPlayerComponent implements OnChanges {
 
 
 	ngOnChanges() {
-		if (!isNil(this.formDefinition)) {
-			this.formsService.initForm(this.formDefinition);
-			this.createForm();
-		}
+		this.formsService.initForm(this.formDefinition);
 	}
 
 	public buildForm(definition: any): void {

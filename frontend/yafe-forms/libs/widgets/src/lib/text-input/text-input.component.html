@@ -1,4 +1,5 @@
-<p (click)="mark($event)">
+<!-- <p (click)="mark($event)"> -->
+<p>
 	<mat-form-field
 		appearance="standard"
 		style="width: 100%; max-width: 300px"
@@ -12,7 +13,6 @@
 			[type]="definition.subType"
 			[name]="definition.name"
 			[formControl]="formControl"
-			[readonly]="true"
 		/>
 		<mat-error>Falsch oder fehlt</mat-error>
 	</mat-form-field>

@@ -1,0 +1,12 @@
+<mat-button-toggle-group
+	name="yafeFormGroup"
+	[value]="currentGroupDefinition"
+	(valueChange)="currentGroupDefinitionChange.emit($event)"
+>
+	<mat-button-toggle
+		*ngFor="let definition of editableDefinitions"
+		[value]="definition"
+		>{{ definition.name }}</mat-button-toggle
+	>
+</mat-button-toggle-group>
+<button mat-button>+</button>

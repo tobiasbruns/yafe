@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormDefinitionService } from '@yafe-forms/core';
+import { WidgetsModule } from '@yafe-forms/widgets';
 import { of } from 'rxjs';
 import { FormPlayerComponent } from '../form-player/form-player.component';
 import { FormPlayerContainerComponent } from './form-player-container.component';
@@ -19,7 +20,8 @@ describe('FormPlayerContainerComponent', () => {
 				MatIconModule,
 				RouterTestingModule,
 				HttpClientTestingModule,
-				RouterTestingModule],
+				RouterTestingModule,
+				WidgetsModule],
 			declarations: [FormPlayerContainerComponent, FormPlayerComponent],
 			providers: [
 				{

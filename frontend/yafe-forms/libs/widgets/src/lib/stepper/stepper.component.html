@@ -6,7 +6,10 @@
 		<form [formGroup]="formsService.groups[i]">
 			<ng-template matStepLabel>{{ groupDefinition.title }}</ng-template>
 			<div>
-				<div #stepForm></div>
+				<yafe-forms-form
+					[formGroup]="formsService.groups[i]"
+					[formDefinition]="groupDefinition"
+				></yafe-forms-form>
 			</div>
 			<div>
 				<button *ngIf="i > 0" mat-raised-button matStepperPrevious>Back</button>

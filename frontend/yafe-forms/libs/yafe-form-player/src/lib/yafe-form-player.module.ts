@@ -7,6 +7,7 @@ import { FormListComponent } from './form-list/form-list.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { WidgetsModule } from '@yafe-forms/widgets';
 
 const routes: Routes = [{
 	path: 'form/:formName',
@@ -20,7 +21,8 @@ const routes: Routes = [{
 		RouterModule.forChild(routes),
 		MatButtonModule,
 		MatIconModule,
-		MatSlideToggleModule
+		MatSlideToggleModule,
+		WidgetsModule
 	],
 	declarations: [FormPlayerComponent, FormPlayerContainerComponent, FormListComponent],
 	exports: [FormPlayerContainerComponent]

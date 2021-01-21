@@ -1,5 +1,5 @@
 import { group } from '@angular/animations';
-import { ComponentRef } from '@angular/core';
+import { ComponentRef, OnChanges, OnInit } from '@angular/core';
 import { AfterContentInit, Component, Input, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FieldsService, FormFieldComponent, isNotNil, YafeFieldDefinition, YafeFormGroup } from '@yafe-forms/core';
@@ -13,7 +13,7 @@ import { TextInputComponent } from '../text-input/text-input.component';
 	templateUrl: './form.component.html',
 	styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements AfterContentInit {
+export class FormComponent implements OnInit, OnChanges {
 
 	@Input() formGroup: FormGroup;
 	@Input() formDefinition: YafeFormGroup;
@@ -29,7 +29,11 @@ export class FormComponent implements AfterContentInit {
 
 	constructor(private fieldsService: FieldsService) { }
 
-	ngAfterContentInit(): void {
+	ngOnInit(): void {
+		this.ngOnChanges();
+	}
+
+	ngOnChanges(): void {
 		this.fieldsContainer.clear();
 		this.createFormContent(this.formDefinition, this.fieldsContainer, this.formGroup);
 	}
@@ -61,7 +65,7 @@ export class FormComponent implements AfterContentInit {
 		if (formGroup) {
 			const subFormGroup = <FormGroup>formGroup.controls[groupDef.name]
 			if (!subFormGroup) console.warn("cannot find subFormGroup: " + groupDef.name);
-			subGroup.instance.formGroup = subFormGroup;
+			else subGroup.instance.formGroup = subFormGroup;
 		}
 		return subGroup;
 	}

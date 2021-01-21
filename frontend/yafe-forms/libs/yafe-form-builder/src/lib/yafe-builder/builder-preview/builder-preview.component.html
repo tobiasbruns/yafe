@@ -1,20 +1,21 @@
-<mat-tab-group style="height: 100%">
-	<mat-tab
-		style="height: 100%"
-		*ngFor="let groupDefinition of formDefinition.groups"
-		[label]="groupDefinition.title"
-	>
-		<div class="workspace">
-			<yafe-forms-form
-				class="form-editor"
-				[formDefinition]="groupDefinition"
-			></yafe-forms-form>
+<yafe-forms-group-selector
+	[editableDefinitions]="editableDefinitions"
+	(currentGroupDefinitionChange)="currentDefinition = $event"
+></yafe-forms-group-selector>
+<hr />
 
-			<div class="json-editor">
-				<yafe-forms-json-input
-					[formDefinition]="groupDefinition"
-				></yafe-forms-json-input>
-			</div>
+<ng-container *ngIf="currentDefinition">
+	<div class="workspace" *ngIf="currentDefinition.type === 'group'">
+		<yafe-forms-form
+			*ngIf="parsedDefinition"
+			class="form-editor"
+			[formDefinition]="parsedDefinition"
+		></yafe-forms-form>
+
+		<div class="json-editor">
+			<yafe-forms-json-input
+				[(formDefinition)]="currentDefinition"
+			></yafe-forms-json-input>
 		</div>
-	</mat-tab>
-</mat-tab-group>
+	</div>
+</ng-container>

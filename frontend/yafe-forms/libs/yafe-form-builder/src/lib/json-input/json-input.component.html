@@ -1,10 +1,15 @@
-<textarea [(ngModel)]="currentInput" (keyup)="jsonInput()"></textarea>
+<div class="editor-workspace">
+	<div class="editor-input">
+		<!-- <textarea [(ngModel)]="currentInput" (keyup)="jsonInput()"></textarea> -->
 
-<!--
-<hr />
+		<textarea matInput [formControl]="innerControl"></textarea>
+	</div>
 
-<div *ngIf="parserError">
-	<h3>Invalid json</h3>
-	{{ parserError }}
+	<div class="editor-log">
+		Konsole
+		<!-- <ng-container *ngIf="parserError"> -->
+		<h3>Invalid json</h3>
+		{{ parserError }}
+		<!-- </ng-container> -->
+	</div>
 </div>
--->

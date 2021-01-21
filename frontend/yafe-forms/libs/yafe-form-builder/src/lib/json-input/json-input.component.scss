@@ -1,11 +1,17 @@
-div {
-	position: relative;
-	left: 0;
-	right: 0;
-	top: 0;
-	height: 100px;
-}
-textarea {
-	width: 100%;
+.editor-workspace {
+	display: flex;
 	height: 100%;
+
+	.editor-input {
+		flex: 3;
+
+		textarea {
+			min-height: 150px;
+			width: 100%;
+		}
+	}
+	.editor-log {
+		flex: 1;
+		padding-left: 10px;
+	}
 }
