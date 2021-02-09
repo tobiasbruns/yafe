@@ -1,5 +1,5 @@
 import { group } from '@angular/animations';
-import { ComponentRef, OnChanges, OnInit } from '@angular/core';
+import { AfterViewInit, ComponentRef, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { AfterContentInit, Component, Input, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FieldsService, FormFieldComponent, isNotNil, YafeFieldDefinition, YafeFormGroup } from '@yafe-forms/core';
@@ -30,10 +30,20 @@ export class FormComponent implements OnInit, OnChanges {
 	constructor(private fieldsService: FieldsService) { }
 
 	ngOnInit(): void {
-		this.ngOnChanges();
+		this.resetForm();
 	}
 
-	ngOnChanges(): void {
+	ngOnChanges(changes: SimpleChanges): void {
+		if (this.isDifferent(changes['formDefinition'])) {
+			this.resetForm();
+		}
+	}
+
+	private isDifferent(change: SimpleChange): boolean {
+		return JSON.stringify(change.currentValue) !== JSON.stringify(change.previousValue);
+	}
+
+	private resetForm(): void {
 		this.fieldsContainer.clear();
 		this.createFormContent(this.formDefinition, this.fieldsContainer, this.formGroup);
 	}
