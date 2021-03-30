@@ -24,7 +24,7 @@ export class BuilderPreviewComponent implements OnChanges {
 	constructor() {
 		const settingsControl = new FormControl(null);
 		this.editorControl = new FormGroup({ formSettings: settingsControl });
-		this.editableDefinitions = [{ formControl: settingsControl, name: 'formSettings', type: 'settings' }];
+		// this.editableDefinitions = [{ formControl: settingsControl, name: 'settings', type: 'settings' }];
 	}
 
 	public ngOnChanges() {
@@ -32,10 +32,10 @@ export class BuilderPreviewComponent implements OnChanges {
 			const json = JSON.stringify(groupDefinition, null, 5);
 			const formControl = new FormControl(json);
 			this.editorControl.addControl(groupDefinition.name, formControl);
-			this.editableDefinitions.push({ formControl, name: groupDefinition.name, type: 'group' });
+			// this.editableDefinitions.push({ formControl, name: groupDefinition.name, type: 'group' });
 		});
 
-		this.currentDefinition = this.editableDefinitions[0];
+		// this.currentDefinition = this.editableDefinitions[0];
 	}
 
 	get parsedDefinition(): YafeFormGroup {

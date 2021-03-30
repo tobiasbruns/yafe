@@ -3,10 +3,12 @@
 	[value]="currentGroupDefinition"
 	(valueChange)="currentGroupDefinitionChange.emit($event)"
 >
+	<button mat-icon-button><mat-icon>settings</mat-icon></button>
 	<mat-button-toggle
 		*ngFor="let definition of editableDefinitions"
 		[value]="definition"
 		>{{ definition.name }}</mat-button-toggle
 	>
+	<!-- <mat-button/-toggle [value]="null">+</mat-button-toggle> -->
+	<button mat-icon-button><mat-icon>add</mat-icon></button>
 </mat-button-toggle-group>
-<button mat-button>+</button>

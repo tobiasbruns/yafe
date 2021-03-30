@@ -10,8 +10,8 @@ import { EditableGroupDefinition } from '../builder-preview/builder-preview.comp
 export class GroupSelectorComponent {
 
 	@Input() editableDefinitions: EditableGroupDefinition[];
-
 	@Input() currentGroupDefinition: YafeFormGroup;
+
 	@Output() currentGroupDefinitionChange: EventEmitter<EditableGroupDefinition> = new EventEmitter();
 
 	constructor() { }
