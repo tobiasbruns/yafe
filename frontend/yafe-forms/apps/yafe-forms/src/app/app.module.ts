@@ -13,6 +13,8 @@ import { YafeFormPlayerModule } from '@yafe-forms/yafe-form-player';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { FormListComponent } from 'libs/yafe-form-player/src/lib/form-list/form-list.component';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 
 const routes: Routes = [{
 	path: '',
@@ -30,7 +32,9 @@ const routes: Routes = [{
 		CoreModule,
 		MatGridListModule, FormsModule, ReactiveFormsModule,
 		MatDividerModule,
-		YafeFormBuilderModule],
+		YafeFormBuilderModule,
+		FormlyModule.forRoot({ extras: { lazyRender: true } }),
+		FormlyMaterialModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
