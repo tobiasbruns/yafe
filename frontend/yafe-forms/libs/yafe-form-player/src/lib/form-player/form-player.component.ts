@@ -1,8 +1,7 @@
-import { AfterContentInit, Component, Input, OnChanges, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { StepperComponent, TextInputComponent } from '@yafe-forms/widgets';
-import { isNil, FormsService } from '@yafe-forms/core';
-import { ComponentRef } from '@angular/core';
-import { ComponentFactoryResolver } from '@angular/core';
+import { Component, ComponentFactoryResolver, ComponentRef, Input, OnChanges, ViewChild, ViewContainerRef } from '@angular/core';
+import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormsService } from '@yafe-forms/core';
+import { StepperComponent } from '@yafe-forms/widgets';
 
 
 @Component({
@@ -17,16 +16,25 @@ export class FormPlayerComponent implements OnChanges {
 	@ViewChild('yafeforms', { read: ViewContainerRef, static: true })
 	formsContainer: ViewContainerRef;
 
-	constructor(private formsService: FormsService, private resolver: ComponentFactoryResolver) { }
+	readonly formConfig: FormlyFieldConfig[] = [{
+		key: 'name',
+		type: 'input',
+		templateOptions: {
+			label: 'Nachname',
+			required: true
+		}
+	}]
+
+	constructor(public formsService: FormsService, private resolver: ComponentFactoryResolver) { }
 
 
 	ngOnChanges() {
-		this.formsService.initForm(this.formDefinition);
+		// this.formsService.initForm(this.formDefinition);
 	}
 
 	public buildForm(definition: any): void {
-		this.formsService.initForm(definition);
-		this.createForm();
+		// this.formsService.initForm(definition);
+		// this.createForm();
 	}
 
 	private createForm(): void {

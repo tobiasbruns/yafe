@@ -1,4 +1,9 @@
-<div class="form-header" *ngIf="formDefinition">
+<form (submit)="formsService.submit()">
+	<formly-form [fields]="formDefinition"></formly-form>
+	<button type="submit">Absenden</button>
+</form>
+
+<!-- <div class="form-header" *ngIf="formDefinition">
 	<div class="left">
 		<button mat-icon-button routerLink="/">
 			<mat-icon>arrow_back</mat-icon>
@@ -10,4 +15,4 @@
 
 <div style="max-width: 750px">
 	<yafe-forms-stepper></yafe-forms-stepper>
-</div>
+</div> -->

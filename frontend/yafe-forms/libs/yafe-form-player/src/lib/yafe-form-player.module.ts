@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormPlayerComponent } from './form-player/form-player.component';
-import { FormPlayerContainerComponent } from './form-player-container/form-player-container.component';
-import { RouterModule, Routes } from '@angular/router';
-import { FormListComponent } from './form-list/form-list.component';
+import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { RouterModule, Routes } from '@angular/router';
+import { FormlyModule } from '@ngx-formly/core';
 import { WidgetsModule } from '@yafe-forms/widgets';
+import { FormListComponent } from './form-list/form-list.component';
+import { FormPlayerContainerComponent } from './form-player-container/form-player-container.component';
+import { FormPlayerComponent } from './form-player/form-player.component';
 
 const routes: Routes = [{
 	path: 'form/:formName',
@@ -22,6 +23,7 @@ const routes: Routes = [{
 		MatButtonModule,
 		MatIconModule,
 		MatSlideToggleModule,
+		FormlyModule,
 		WidgetsModule
 	],
 	declarations: [FormPlayerComponent, FormPlayerContainerComponent, FormListComponent],
