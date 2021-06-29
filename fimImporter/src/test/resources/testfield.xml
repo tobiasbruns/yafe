@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:xdatenfelder.datenfeld.0104 xmlns:ns2="urn:xoev-de:fim:standard:xdatenfelder_2">
+    <header>
+        <nachrichtID>testid</nachrichtID>
+    </header>
+</ns2:xdatenfelder.datenfeld.0104>

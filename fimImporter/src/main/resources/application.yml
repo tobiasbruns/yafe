@@ -1,0 +1,6 @@
+yafe:
+  fim:
+    datenfelder:
+      directory: /home/tobias/Arbeit/eigeneProjekte/yafe/05_test/fim_files/Datenfeldbaukasten
+    codelist:
+      directory: /home/tobias/Arbeit/eigeneProjekte/yafe/05_test/fim_files/Codelisten

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="1.0"
+	targetNamespace="urn:xoev-de:fim:standard:xdatenfelder_2"
+	xmlns:gc="urn:xoev-de:fim:standard:xdatenfelder_2"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:complexType name="datenfeld"></xsd:complexType>
+
+	<xsd:element name="xdatenfelder.datenfeld.0104"
+		type="gc:DatenfelderDocument">
+	</xsd:element>
+
+	<xsd:complexType name="DatenfelderDocument">
+		<xsd:sequence>
+			<xsd:element name="header" type="gc:header"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="header">
+		<xsd:annotation>
+		</xsd:annotation>
+		<xsd:sequence>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xdf:xdatenfelder.datenfeldgruppe.0103
+	xmlns:xdf="urn:xoev-de:fim:standard:xdatenfelder_2">
+	<header>
+		<nachrichtID>5DDEE3A09B87B83A</nachrichtID>
+		<erstellungszeitpunkt>2020-11-04T22:58:34.921Z
+		</erstellungszeitpunkt>
+	</header>
+	<datenfeldgruppe>
+		<identifikation>
+			<id>G60000017</id>
+			<version>1.0</version>
+		</identifikation>
+		<name>Wochentage</name>
+		<bezeichnungEingabe>Wochentage</bezeichnungEingabe>
+		<beschreibung />
+		<definition>Die Wochentage beinhalten die Tage der Woche.
+		</definition>
+		<bezug />
+		<status
+			listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+			listVersionID="1.0">
+			<code>aktiv</code>
+		</status>
+		<fachlicherErsteller>FJD Information Technologies AG
+		</fachlicherErsteller>
+		<veroeffentlichungsdatum>2020-07-28</veroeffentlichungsdatum>
+		<schemaelementart
+			listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+			listVersionID="1.0">
+			<code>HAR</code>
+		</schemaelementart>
+		<hilfetextEingabe>Die Wochentage beinhalten die Tage der Woche.
+		</hilfetextEingabe>
+		<hilfetextAusgabe>Die Wochentage beinhalten die Tage der Woche.
+		</hilfetextAusgabe>
+		<struktur>
+			<anzahl>0:1</anzahl>
+			<bezug />
+			<enthaelt>
+				<datenfeld>
+					<identifikation>
+						<id>F60000039</id>
+						<version>1.0</version>
+					</identifikation>
+					<name>Montag</name>
+					<bezeichnungEingabe>Montag</bezeichnungEingabe>
+					<beschreibung />
+					<definition>
+					</definition>
+					<bezug>DIN 1355</bezug>
+					<status
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+						listVersionID="1.0">
+						<code>aktiv</code>
+					</status>
+					<fachlicherErsteller>FJD Information Technologies AG
+					</fachlicherErsteller>
+					<versionshinweis>Automatisch erzeugte Version
+					</versionshinweis>
+					<freigabedatum>2020-11-02</freigabedatum>
+					<veroeffentlichungsdatum>2020-11-02
+					</veroeffentlichungsdatum>
+					<schemaelementart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+						listVersionID="1.0">
+						<code>HAR</code>
+					</schemaelementart>
+					<hilfetextEingabe>
+					</hilfetextEingabe>
+					<hilfetextAusgabe>
+					</hilfetextAusgabe>
+					<feldart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.feldart"
+						listVersionID="1.0">
+						<code>input</code>
+					</feldart>
+					<datentyp
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.datentyp"
+						listVersionID="1.0">
+						<code>bool</code>
+					</datentyp>
+					<praezisierung />
+					<inhalt />
+				</datenfeld>
+			</enthaelt>
+		</struktur>
+		<struktur>
+			<anzahl>0:1</anzahl>
+			<bezug />
+			<enthaelt>
+				<datenfeld>
+					<identifikation>
+						<id>F60000040</id>
+						<version>1.0</version>
+					</identifikation>
+					<name>Dienstag</name>
+					<bezeichnungEingabe>Dienstag</bezeichnungEingabe>
+					<beschreibung />
+					<definition>
+					</definition>
+					<bezug>DIN 1355</bezug>
+					<status
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+						listVersionID="1.0">
+						<code>aktiv</code>
+					</status>
+					<fachlicherErsteller>FJD Information Technologies AG
+					</fachlicherErsteller>
+					<versionshinweis>Automatisch erzeugte Version
+					</versionshinweis>
+					<schemaelementart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+						listVersionID="1.0">
+						<code>HAR</code>
+					</schemaelementart>
+					<hilfetextEingabe>
+					</hilfetextEingabe>
+					<hilfetextAusgabe>
+					</hilfetextAusgabe>
+					<feldart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.feldart"
+						listVersionID="1.0">
+						<code>input</code>
+					</feldart>
+					<datentyp
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.datentyp"
+						listVersionID="1.0">
+						<code>bool</code>
+					</datentyp>
+					<praezisierung />
+					<inhalt />
+				</datenfeld>
+			</enthaelt>
+		</struktur>
+		<struktur>
+			<anzahl>0:1</anzahl>
+			<bezug />
+			<enthaelt>
+				<datenfeld>
+					<identifikation>
+						<id>F60000041</id>
+						<version>1.0</version>
+					</identifikation>
+					<name>Mittwoch</name>
+					<bezeichnungEingabe>Mittwoch</bezeichnungEingabe>
+					<beschreibung />
+					<definition>
+					</definition>
+					<bezug>DIN 1355</bezug>
+					<status
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+						listVersionID="1.0">
+						<code>aktiv</code>
+					</status>
+					<fachlicherErsteller>FJD Information Technologies AG
+					</fachlicherErsteller>
+					<versionshinweis>Automatisch erzeugte Version
+					</versionshinweis>
+					<schemaelementart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+						listVersionID="1.0">
+						<code>HAR</code>
+					</schemaelementart>
+					<hilfetextEingabe>
+					</hilfetextEingabe>
+					<hilfetextAusgabe>
+					</hilfetextAusgabe>
+					<feldart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.feldart"
+						listVersionID="1.0">
+						<code>input</code>
+					</feldart>
+					<datentyp
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.datentyp"
+						listVersionID="1.0">
+						<code>bool</code>
+					</datentyp>
+					<praezisierung />
+					<inhalt />
+				</datenfeld>
+			</enthaelt>
+		</struktur>
+		<struktur>
+			<anzahl>0:1</anzahl>
+			<bezug />
+			<enthaelt>
+				<datenfeld>
+					<identifikation>
+						<id>F60000042</id>
+						<version>1.0</version>
+					</identifikation>
+					<name>Donnerstag</name>
+					<bezeichnungEingabe>Donnerstag</bezeichnungEingabe>
+					<beschreibung />
+					<definition>
+					</definition>
+					<bezug>DIN 1355</bezug>
+					<status
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+						listVersionID="1.0">
+						<code>aktiv</code>
+					</status>
+					<fachlicherErsteller>FJD Information Technologies AG
+					</fachlicherErsteller>
+					<versionshinweis>Automatisch erzeugte Version
+					</versionshinweis>
+					<schemaelementart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+						listVersionID="1.0">
+						<code>HAR</code>
+					</schemaelementart>
+					<hilfetextEingabe>
+					</hilfetextEingabe>
+					<hilfetextAusgabe>
+					</hilfetextAusgabe>
+					<feldart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.feldart"
+						listVersionID="1.0">
+						<code>input</code>
+					</feldart>
+					<datentyp
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.datentyp"
+						listVersionID="1.0">
+						<code>bool</code>
+					</datentyp>
+					<praezisierung />
+					<inhalt />
+				</datenfeld>
+			</enthaelt>
+		</struktur>
+		<struktur>
+			<anzahl>0:1</anzahl>
+			<bezug />
+			<enthaelt>
+				<datenfeld>
+					<identifikation>
+						<id>F60000043</id>
+						<version>1.0</version>
+					</identifikation>
+					<name>Freitag</name>
+					<bezeichnungEingabe>Freitag</bezeichnungEingabe>
+					<beschreibung />
+					<definition>
+					</definition>
+					<bezug>DIN 1355</bezug>
+					<status
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+						listVersionID="1.0">
+						<code>aktiv</code>
+					</status>
+					<fachlicherErsteller>FJD Information Technologies AG
+					</fachlicherErsteller>
+					<versionshinweis>Automatisch erzeugte Version
+					</versionshinweis>
+					<schemaelementart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+						listVersionID="1.0">
+						<code>HAR</code>
+					</schemaelementart>
+					<hilfetextEingabe>
+					</hilfetextEingabe>
+					<hilfetextAusgabe>
+					</hilfetextAusgabe>
+					<feldart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.feldart"
+						listVersionID="1.0">
+						<code>input</code>
+					</feldart>
+					<datentyp
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.datentyp"
+						listVersionID="1.0">
+						<code>bool</code>
+					</datentyp>
+					<praezisierung />
+					<inhalt />
+				</datenfeld>
+			</enthaelt>
+		</struktur>
+		<struktur>
+			<anzahl>0:1</anzahl>
+			<bezug />
+			<enthaelt>
+				<datenfeld>
+					<identifikation>
+						<id>F60000044</id>
+						<version>1.0</version>
+					</identifikation>
+					<name>Samstag</name>
+					<bezeichnungEingabe>Samstag</bezeichnungEingabe>
+					<beschreibung />
+					<definition>
+					</definition>
+					<bezug>DIN 1355</bezug>
+					<status
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+						listVersionID="1.0">
+						<code>aktiv</code>
+					</status>
+					<fachlicherErsteller>FJD Information Technologies AG
+					</fachlicherErsteller>
+					<versionshinweis>Automatisch erzeugte Version
+					</versionshinweis>
+					<schemaelementart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+						listVersionID="1.0">
+						<code>HAR</code>
+					</schemaelementart>
+					<hilfetextEingabe>
+					</hilfetextEingabe>
+					<hilfetextAusgabe>
+					</hilfetextAusgabe>
+					<feldart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.feldart"
+						listVersionID="1.0">
+						<code>input</code>
+					</feldart>
+					<datentyp
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.datentyp"
+						listVersionID="1.0">
+						<code>bool</code>
+					</datentyp>
+					<praezisierung />
+					<inhalt />
+				</datenfeld>
+			</enthaelt>
+		</struktur>
+		<struktur>
+			<anzahl>0:1</anzahl>
+			<bezug />
+			<enthaelt>
+				<datenfeld>
+					<identifikation>
+						<id>F60000045</id>
+						<version>1.0</version>
+					</identifikation>
+					<name>Sonntag</name>
+					<bezeichnungEingabe>Sonntag</bezeichnungEingabe>
+					<beschreibung />
+					<definition>
+					</definition>
+					<bezug>DIN 1355</bezug>
+					<status
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+						listVersionID="1.0">
+						<code>aktiv</code>
+					</status>
+					<fachlicherErsteller>FJD Information Technologies AG
+					</fachlicherErsteller>
+					<versionshinweis>Automatisch erzeugte Version
+					</versionshinweis>
+					<schemaelementart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+						listVersionID="1.0">
+						<code>HAR</code>
+					</schemaelementart>
+					<hilfetextEingabe>
+					</hilfetextEingabe>
+					<hilfetextAusgabe>
+					</hilfetextAusgabe>
+					<feldart
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.feldart"
+						listVersionID="1.0">
+						<code>input</code>
+					</feldart>
+					<datentyp
+						listURI="urn:xoev-de:fim:codeliste:xdatenfelder.datentyp"
+						listVersionID="1.0">
+						<code>bool</code>
+					</datentyp>
+					<praezisierung />
+					<inhalt />
+				</datenfeld>
+			</enthaelt>
+		</struktur>
+	</datenfeldgruppe>
+</xdf:xdatenfelder.datenfeldgruppe.0103>
+

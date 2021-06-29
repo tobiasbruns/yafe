@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xdf:xdatenfelder.datenfeld.0104
+	xmlns:xdf="urn:xoev-de:fim:standard:xdatenfelder_2">
+	<header>
+		<nachrichtID>A424DF2532286F7A</nachrichtID>
+		<erstellungszeitpunkt>2020-11-04T22:58:34.821Z
+		</erstellungszeitpunkt>
+	</header>
+	<datenfeld>
+		<identifikation>
+			<id>F60000020</id>
+			<version>1.0</version>
+		</identifikation>
+		<name>Ort</name>
+		<bezeichnungEingabe>Ort</bezeichnungEingabe>
+		<bezeichnungAusgabe>Ort</bezeichnungAusgabe>
+		<beschreibung />
+		<definition>Der "Ort" enthält den Namen eines Ortes (Gemeinde,
+			Ortschaft oder Stadt). Als Ortsname sollte der amtliche Gemeindename
+			genutzt werden.</definition>
+		<bezug>§ 5 (2) Nr. 9 PAuswG vom 21.6.2019; Anhang 3 Abschnitt 1
+			(Wohnort) PAuswV vom 28.9.2017; Tabelle 11 BSI TR-03123, Version
+			1.5.1; Xinneres.Meldeanschrift.Wohnort Version 8;
+			XOEV.Kernkomponente.Anschrift.ort vom 31.01.2020</bezug>
+		<status
+			listURI="urn:xoev-de:fim:codeliste:xdatenfelder.status"
+			listVersionID="1.0">
+			<code>aktiv</code>
+		</status>
+		<fachlicherErsteller>FIM-Baustein Datenfelder
+		</fachlicherErsteller>
+		<freigabedatum>2020-11-02</freigabedatum>
+		<veroeffentlichungsdatum>2020-11-02</veroeffentlichungsdatum>
+		<schemaelementart
+			listURI="urn:xoev-de:fim:codeliste:xdatenfelder.schemaelementart"
+			listVersionID="1.0">
+			<code>HAR</code>
+		</schemaelementart>
+		<hilfetextEingabe />
+		<hilfetextAusgabe />
+		<feldart
+			listURI="urn:xoev-de:fim:codeliste:xdatenfelder.feldart"
+			listVersionID="1.0">
+			<code>input</code>
+		</feldart>
+		<datentyp
+			listURI="urn:xoev-de:fim:codeliste:xdatenfelder.datentyp"
+			listVersionID="1.0">
+			<code>text</code>
+		</datentyp>
+		<praezisierung>{"minLength":"1","maxLength":"255"}
+		</praezisierung>
+		<inhalt />
+	</datenfeld>
+</xdf:xdatenfelder.datenfeld.0104>
